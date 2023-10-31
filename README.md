@@ -10,6 +10,6 @@ yarn dev
 pnpm dev
 # or
 bun dev
-# or
+# or test turbopack with
 npm run turbo
 ```
