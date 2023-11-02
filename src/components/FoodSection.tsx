@@ -25,9 +25,9 @@ export default function FoodSection() {
 
   return (
     <div className='w-screen h-full'>
-        <div className='relative h-16 w-full flex flex-row items-center px-14 bg-primary-light'>
-            <p className='text-white font-bold text-lg'>CATEGORÍAS</p>
-            <div className='absolute h-full top-0 left-[40%] flex flex-row items-center gap-2 text-white'>
+        <div className='relative h-32 lg:h-16 w-full flex flex-col lg:flex-row items-center px-14 bg-primary-light'>
+            <p className='text-white font-bold text-lg mt-4 lg:mt-0'>CATEGORÍAS</p>
+            <div className='absolute h-1/2 lg:h-full w-full lg:w-fit bottom-0 lg:top-0 lg:left-[40%] flex flex-row items-center gap-2 text-white'>
                 <SectionFoodButton food='Hamburguesa' setFood={setFoodSelected} foodSelected={foodSelected}>
                     <FaHamburger className="h-4 w-4"/>
                 </SectionFoodButton>
@@ -44,7 +44,7 @@ export default function FoodSection() {
         </div>
         {
             dataMap.length === 0 ? <FoodSectionSkeleton /> :
-            <div className='w-full grid grid-cols-3 gap-10 bg-primary-dark py-12 pl-28'>
+            <div className='w-full flex flex-col justify-center items-center lg:grid lg:grid-cols-3 gap-10 bg-primary-dark py-12 lg:pl-28'>
                 {
                     dataMap
                     .filter((item: product) => item.rubroGeneral.denominacion === foodSelected)

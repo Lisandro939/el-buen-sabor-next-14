@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins, Inter, Rubik, Work_Sans, Quicksand, Mulish } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 /* const inter = Inter({ subsets: ['latin'] })
 
@@ -26,7 +28,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={mulish.className}>{children}</body>
+      <body className={mulish.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

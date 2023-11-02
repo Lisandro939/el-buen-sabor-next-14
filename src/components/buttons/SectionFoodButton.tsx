@@ -13,7 +13,7 @@ export default function SectionFoodButton({children, food, setFood, foodSelected
 
     if (foodSelected === food) {
         return (
-            <button className='h-full w-20 bg-primary-dark flex items-center justify-center rounded-t-xl'>
+            <button className='h-full w-20 bg-primary-dark flex items-center justify-center'>
                 <div className='scale-[2]'>
                     {typeof children === 'function' ? children() : children}
                 </div>
