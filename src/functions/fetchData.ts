@@ -1,6 +1,8 @@
 'use server'
 
+import { API_URL } from "@/consts/CONSTS"
+
 export async function FetchData () {
-    const data = await fetch('https://el-buen-sabor-api.onrender.com/api/v1/articulosManufacturados', { cache: 'no-store' }).then(res => res.json())
+    const data = await fetch(`${API_URL}/articulosManufacturados`, { next: { revalidate: 3600 } }).then(res => res.json())
     return data
 }
