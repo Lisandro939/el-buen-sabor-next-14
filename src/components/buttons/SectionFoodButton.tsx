@@ -1,11 +1,12 @@
 'use client'
 
+import { FoodType } from '@/enums/enums'
 import React from 'react'
 
 type Props = {
     children: string | JSX.Element | JSX.Element[] | (() => JSX.Element),
-    food: string,
-    setFood: React.Dispatch<React.SetStateAction<string>>,
+    food: FoodType,
+    setFood: React.Dispatch<React.SetStateAction<FoodType>>,
     foodSelected: string
 }
 
