@@ -23,24 +23,29 @@ export default function FoodSection() {
         fetchDataMap();
     }, []);
 
+    const foodIcons: Record<FoodType, React.ReactElement> = {
+        [FoodType.HAMBURGUESA]: <FaHamburger className="h-4 w-4" />,
+        [FoodType.PIZZA]: <FaPizzaSlice className="h-4 w-4" />,
+        [FoodType.PAPAS_FRITAS]: <CiFries className="h-6 w-6" />,
+        [FoodType.BEBIDAS]: <FaWineBottle className="h-4 w-4" />,
+    };
+
 
   return (
     <div className='w-screen h-full'>
         <div className='relative h-32 lg:h-16 w-full flex flex-col lg:flex-row items-center px-14 bg-primary-light'>
             <p className='text-white font-bold text-lg mt-4 lg:mt-0'>CATEGORÍAS</p>
             <div className='absolute h-1/2 lg:h-full w-screen lg:w-fit bottom-0 lg:top-0 lg:left-[40%] flex flex-row items-center justify-between gap-2 text-white'>
-                <SectionFoodButton food={FoodType.HAMBURGUESA} setFood={setFoodSelected} foodSelected={foodSelected}>
-                    <FaHamburger className="h-4 w-4"/>
+            {Object.keys(foodIcons).map((foodType) => (
+                <SectionFoodButton
+                    key={foodType}
+                    food={foodType as FoodType}
+                    setFood={setFoodSelected}
+                    foodSelected={foodSelected}
+                >
+                    {foodIcons[foodType as FoodType]}
                 </SectionFoodButton>
-                <SectionFoodButton food={FoodType.PIZZA} setFood={setFoodSelected} foodSelected={foodSelected}>
-                    <FaPizzaSlice className="h-4 w-4"/>
-                </SectionFoodButton>
-                <SectionFoodButton food={FoodType.PAPAS_FRITAS} setFood={setFoodSelected} foodSelected={foodSelected}>
-                    <CiFries className="h-6 w-6"/>
-                </SectionFoodButton>
-                <SectionFoodButton food={FoodType.BEBIDAS} setFood={setFoodSelected} foodSelected={foodSelected}>
-                    <FaWineBottle className="h-4 w-4"/>
-                </SectionFoodButton>
+                ))}
             </div>
         </div>
         {
