@@ -70,12 +70,12 @@ export default function ProductSection() {
     } else {
         return (
             <div className="w-full lg:w-screen h-full lg:h-[60vh] bg-primary-dark flex flex-col lg:flex-row items-center justify-start lg:px-32">
-                <section className="flex flex-col lg:flex-row gap-10 w-full">
+                <section className="flex flex-col lg:flex-row gap-4 lg:gap-10 w-full">
                     <div className="w-full w-[384px] h-[240px] aspect-[8/5] animate-pulse bg-primary-medium lg:rounded-lg">.</div>
                     <section className="lg:h-[240px] text-white flex flex-col lg:justify-between w-full px-4 gap-4 lg:gap-0 mb-8 lg:mb-0">
                         <h2 className="w-64 text-2xl font-bold bg-primary-medium animate-pulse rounded-lg text-primary-medium">.</h2>
-                        <p className="w-32 text-2xl font-bold bg-primary-medium animate-pulse rounded-lg text-primary-medium">.</p>
-                        <p className="w-32 text-2xl font-bold bg-secondary-medium animate-pulse rounded-lg text-secondary-medium">.</p>
+                        <p className="w-32 text-md font-bold bg-primary-medium animate-pulse rounded-lg text-primary-medium">.</p>
+                        <p className="w-32 text-md font-bold bg-secondary-medium animate-pulse rounded-lg text-secondary-medium">.</p>
                         <div className="flex flex-row lg:gap-4 justify-between items-end w-full">
                             <div className="flex flex-col lg:flex-row gap-4">
                                 <div className="flex flex-row gap-2 bg-primary-light px-4 py-1 rounded-lg justify-between items-center">
