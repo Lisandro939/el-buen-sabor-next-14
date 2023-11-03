@@ -28,7 +28,7 @@ export default function ProductSection() {
                         <img 
                         src={productSearched.imagen} 
                         alt={productSearched.denominacion}
-                        className="h-full aspect-[8/5] lg:rounded-lg object-cover transition-opacity duration-300"
+                        className="w-full h-full aspect-[8/5] lg:rounded-lg object-cover transition-opacity duration-300"
                         />
                     </div>
                     <section className="lg:h-[240px] text-white flex flex-col lg:justify-between w-full px-4 gap-4 lg:gap-0 mb-8 lg:mb-0">

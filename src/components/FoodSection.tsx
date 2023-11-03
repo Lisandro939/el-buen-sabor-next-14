@@ -27,7 +27,7 @@ export default function FoodSection() {
     <div className='w-screen h-full'>
         <div className='relative h-32 lg:h-16 w-full flex flex-col lg:flex-row items-center px-14 bg-primary-light'>
             <p className='text-white font-bold text-lg mt-4 lg:mt-0'>CATEGORÍAS</p>
-            <div className='absolute h-1/2 lg:h-full w-full lg:w-fit bottom-0 lg:top-0 lg:left-[40%] flex flex-row items-center gap-2 text-white'>
+            <div className='absolute h-1/2 lg:h-full w-screen lg:w-fit bottom-0 lg:top-0 lg:left-[40%] flex flex-row items-center justify-between gap-2 text-white'>
                 <SectionFoodButton food='Hamburguesa' setFood={setFoodSelected} foodSelected={foodSelected}>
                     <FaHamburger className="h-4 w-4"/>
                 </SectionFoodButton>
