@@ -1,8 +1,13 @@
+'use client'
+
 import { BiSolidUserCircle } from 'react-icons/bi';
 import { FaShoppingCart } from 'react-icons/fa';
 import { AiOutlineSearch } from 'react-icons/ai';
 import Image from 'next/image';
 import Link from 'next/link';
+import CartButton from './buttons/CartButton';
+import { Provider } from 'react-redux';
+import { store } from '@/app/store';
 
 export default function Header() {
     return (
@@ -19,10 +24,10 @@ export default function Header() {
                 <button >
                     <BiSolidUserCircle className="w-6 h-6 text-white"/>
                 </button>
-                <button className='relative'>
-                    <FaShoppingCart className="w-6 h-6 text-white"/>
-                    <span className='absolute -top-1 -right-1 bg-white border border-black rounded-full w-4 h-4 flex items-center justify-center text-xs text-black'>0</span>
-                </button>
+                
+                <Provider store={store}>
+                    <CartButton />
+                </Provider>
             </div>
         </header>
     )

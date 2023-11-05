@@ -20,6 +20,7 @@ export default function ProductSection() {
                 setProductSearched(data);
             });
         }
+        setCounter(0);
     }, [searchParams]);
 
     if (productSearched?.denominacion && productSearched?.id == Number(searchParams.get('product'))) {

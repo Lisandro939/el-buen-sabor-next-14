@@ -1,4 +1,5 @@
 import { product } from '@/types/types';
+import AddCartWrapper from './wrappers/AddCartWrapper';
 
 interface ProductProps {
     productSearched: product;
@@ -7,6 +8,7 @@ interface ProductProps {
 }
 
 export default function Product({ productSearched, counter, setCounter }: ProductProps) {
+
   return (
     <div className="w-full lg:w-screen h-full lg:h-[60vh] bg-primary-dark flex flex-col lg:flex-row items-center justify-start lg:px-32">
                 <section className="flex flex-col lg:flex-row lg:gap-10 w-full">
@@ -23,9 +25,9 @@ export default function Product({ productSearched, counter, setCounter }: Produc
                         <p>Precio: <b className="text-secondary-medium">${productSearched.precioVenta}</b></p>
                         <div className="flex flex-row lg:gap-4 justify-between items-end w-full">
                             <div className="flex flex-col lg:flex-row gap-4">
-                                <div className="flex flex-row gap-2 bg-primary-light px-4 py-1 rounded-lg justify-between items-center">
+                                <div className="flex flex-row gap-2 bg-primary-light px-2 py-1 rounded-lg justify-between items-center">
                                     <button 
-                                    className="text-2xl w-4 h-2 lg:h-4 flex items-center justify-center"
+                                    className="text-2xl w-6 lg:h-4 flex items-center justify-center"
                                     onClick={() => {
                                         if (counter > 0) {
                                             setCounter(counter - 1)
@@ -35,7 +37,7 @@ export default function Product({ productSearched, counter, setCounter }: Produc
                                     </button>
                                     <span className="w-4 flex items-center justify-center">{counter}</span>
                                     <button 
-                                    className="text-2xl w-4 h-2 lg:h-4 flex items-center justify-center"
+                                    className="text-2xl w-6 lg:h-4 flex items-center justify-center"
                                     onClick={() => {setCounter(counter + 1)}}>
                                         +
                                     </button>
@@ -44,10 +46,7 @@ export default function Product({ productSearched, counter, setCounter }: Produc
                                     Total: <b className="text-secondary-medium">${counter * productSearched.precioVenta}</b>
                                 </p>
                             </div>
-                            <button 
-                            className="h-10 bg-secondary-medium rounded-lg px-4 py-1 text-black font-semibold flex items-center justify-center">
-                                Agregar al carrito
-                            </button>
+                            <AddCartWrapper counter={counter}/>
                         </div>
                     </section>
                 </section>
